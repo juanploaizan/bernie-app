@@ -2,8 +2,9 @@
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import ECommerce from './pages/Dashboard/ECommerce';
+import Dashboard from './pages/Dashboard/Dashboard';
 import PreviewPage from './pages/Preview/PreviewPage';
+import ValorFuturo  from './pages/InteresSimple/ValorFuturo';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -22,12 +23,14 @@ function App() {
   }, []);
 
   return loading ? (
-    <p className=" text-center text-danger">Failed to lead app</p>
+    <p className=" text-center text-danger">Error al cargar la aplicación</p>
   ) : (
     <>
       <Routes>
         <Route path="/" element={<PreviewPage />} />
-        <Route path="/dashboard" element={<ECommerce />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path='/InteresSimple/ValorFuturo' element={<ValorFuturo />} />
+
       </Routes>
     </>
   );
