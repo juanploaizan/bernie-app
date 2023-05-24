@@ -94,7 +94,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
       <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
         {/* <!-- Sidebar Menu --> */}
-        <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
+        <nav className="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
           {/* <!-- Menu Group --> */}
           <div>
             <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
@@ -102,11 +102,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-
-              { /* ------------------------------- BEGIN Interés simple ------------------------------- */}
+              {/* ------------------------------- BEGIN Interés simple ------------------------------- */}
               <SidebarLinkGroup
                 activeCondition={
-                  pathname === '/interes-simple' || pathname.includes('interes-simple')
+                  pathname === '/InteresSimple' ||
+                  pathname.includes('InteresSimple')
                 }
               >
                 {(handleClick, open) => {
@@ -114,9 +114,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     <React.Fragment>
                       <NavLink
                         to="#"
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === '/interes-simple' ||
-                            pathname.includes('interes-simple')) &&
+                        className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                          (pathname === '/InteresSimple' ||
+                            pathname.includes('InteresSimple')) &&
                           'bg-graydark dark:bg-meta-4'
                         }`}
                         onClick={(e) => {
@@ -176,7 +176,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           !open && 'hidden'
                         }`}
                       >
-                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                        <ul className="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
                               to="/InteresSimple/ValorFuturo"
@@ -190,7 +190,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                           <li>
                             <NavLink
-                              to="/"
+                              to="/InteresSimple/ValorPresente"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
@@ -201,7 +201,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                           <li>
                             <NavLink
-                              to="/"
+                              to="/InteresSimple/TasaInteres"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
@@ -212,13 +212,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                           <li>
                             <NavLink
-                              to="/"
+                              to="/InteresSimple/Periodo"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Periodo 
+                              Periodo
                             </NavLink>
                           </li>
                         </ul>
@@ -228,13 +228,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   );
                 }}
               </SidebarLinkGroup>
-              { /* ------------------------------- END Interés simple ------------------------------- */}
+              {/* ------------------------------- END Interés simple ------------------------------- */}
 
-
-              { /* ------------------------------- BEGIN Interés compuesto ------------------------------- */}
+              {/* ------------------------------- BEGIN Interés compuesto ------------------------------- */}
               <SidebarLinkGroup
                 activeCondition={
-                  pathname === '/interes-compuesto' || pathname.includes('interes-compuesto')
+                  pathname === '/InteresCompuesto' ||
+                  pathname.includes('InteresCompuesto')
                 }
               >
                 {(handleClick, open) => {
@@ -242,9 +242,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     <React.Fragment>
                       <NavLink
                         to="#"
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === '/interes-compuesto' ||
-                            pathname.includes('interes-compuesto')) &&
+                        className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                          (pathname === '/InteresCompuesto' ||
+                            pathname.includes('InteresCompuesto')) &&
                           'bg-graydark dark:bg-meta-4'
                         }`}
                         onClick={(e) => {
@@ -304,10 +304,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           !open && 'hidden'
                         }`}
                       >
-                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                        <ul className="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
-                              to="/"
+                              to="/InteresCompuesto/ValorFuturo"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
@@ -318,7 +318,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                           <li>
                             <NavLink
-                              to="/"
+                              to="/InteresCompuesto/ValorPresente"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
@@ -329,7 +329,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                           <li>
                             <NavLink
-                              to="/"
+                              to="/InteresCompuesto/TasaInteres"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
@@ -340,13 +340,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                           <li>
                             <NavLink
-                              to="/"
+                              to="/InteresCompuesto/Periodo"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Periodo 
+                              Periodo
                             </NavLink>
                           </li>
                         </ul>
@@ -356,13 +356,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   );
                 }}
               </SidebarLinkGroup>
-              { /* ------------------------------- END Interés compuesto ------------------------------- */}
+              {/* ------------------------------- END Interés compuesto ------------------------------- */}
 
-
-              { /* ------------------------------- BEGIN anualidades ------------------------------- */}
+              {/* ------------------------------- BEGIN anualidades ------------------------------- */}
               <SidebarLinkGroup
                 activeCondition={
-                  pathname === '/anualidades' || pathname.includes('anualidades')
+                  pathname === '/anualidades' ||
+                  pathname.includes('anualidades')
                 }
               >
                 {(handleClick, open) => {
@@ -370,7 +370,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     <React.Fragment>
                       <NavLink
                         to="#"
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                        className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                           (pathname === '/anualidades' ||
                             pathname.includes('anualidades')) &&
                           'bg-graydark dark:bg-meta-4'
@@ -432,7 +432,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           !open && 'hidden'
                         }`}
                       >
-                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                        <ul className="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
                               to="/"
@@ -474,7 +474,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                 (isActive && '!text-white')
                               }
                             >
-                              Periodo 
+                              Periodo
                             </NavLink>
                           </li>
                         </ul>
@@ -484,10 +484,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   );
                 }}
               </SidebarLinkGroup>
-              { /* ------------------------------- END anualidades ------------------------------- */}
+              {/* ------------------------------- END anualidades ------------------------------- */}
 
-              
-              { /* ------------------------------- BEGIN gradientes ------------------------------- */}
+              {/* ------------------------------- BEGIN gradientes ------------------------------- */}
               <SidebarLinkGroup
                 activeCondition={
                   pathname === '/gradientes' || pathname.includes('gradientes')
@@ -498,7 +497,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     <React.Fragment>
                       <NavLink
                         to="#"
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                        className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                           (pathname === '/gradientes' ||
                             pathname.includes('gradientes')) &&
                           'bg-graydark dark:bg-meta-4'
@@ -560,7 +559,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           !open && 'hidden'
                         }`}
                       >
-                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                        <ul className="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
                               to="/"
@@ -602,7 +601,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                                 (isActive && '!text-white')
                               }
                             >
-                              Periodo 
+                              Periodo
                             </NavLink>
                           </li>
                         </ul>
@@ -612,13 +611,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   );
                 }}
               </SidebarLinkGroup>
-              { /* ------------------------------- END gradientes ------------------------------- */}
+              {/* ------------------------------- END gradientes ------------------------------- */}
 
-
-              { /* ------------------------------- BEGIN amortizaciones ------------------------------- */}
+              {/* ------------------------------- BEGIN amortizaciones ------------------------------- */}
               <SidebarLinkGroup
                 activeCondition={
-                  pathname === '/amortizaciones' || pathname.includes('amortizaciones')
+                  pathname === '/amortizaciones' ||
+                  pathname.includes('amortizaciones')
                 }
               >
                 {(handleClick, open) => {
@@ -626,7 +625,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     <React.Fragment>
                       <NavLink
                         to="#"
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                        className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                           (pathname === '/amortizaciones' ||
                             pathname.includes('amortizaciones')) &&
                           'bg-graydark dark:bg-meta-4'
@@ -688,7 +687,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           !open && 'hidden'
                         }`}
                       >
-                        <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
+                        <ul className="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
                               to="/"
@@ -718,15 +717,23 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   );
                 }}
               </SidebarLinkGroup>
-              { /* ------------------------------- END amortizaciones ------------------------------- */}
+              {/* ------------------------------- END amortizaciones ------------------------------- */}
+            </ul>
+          </div>
 
+          <div>
+            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
+              OTROS
+            </h3>
 
-              { /* ------------------------------- BEGIN conversión de tasas ------------------------------- */}
+            <ul className="mb-6 flex flex-col gap-1.5">
+              {/* ------------------------------- BEGIN conversión de tasas ------------------------------- */}
               <li>
                 <NavLink
-                  to="/conversion-tasas "
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('conversion-tasas') && 'bg-graydark dark:bg-meta-4'
+                  to="/ConversionTasas"
+                  className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes('conversion-tasas') &&
+                    'bg-graydark dark:bg-meta-4'
                   }`}
                 >
                   <svg
@@ -757,8 +764,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   Conversión de tasas
                 </NavLink>
               </li>
-              { /* ------------------------------- END conversión de tasas ------------------------------- */}
-
+              {/* ------------------------------- END conversión de tasas ------------------------------- */}
             </ul>
           </div>
         </nav>
