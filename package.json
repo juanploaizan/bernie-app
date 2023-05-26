@@ -10,14 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.1",
     "apexcharts": "^3.37.0",
     "jsvectormap": "^1.5.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.1",
+    "react-to-print": "^2.14.12",
     "sort-by": "^0.0.2"
   },
   "devDependencies": {

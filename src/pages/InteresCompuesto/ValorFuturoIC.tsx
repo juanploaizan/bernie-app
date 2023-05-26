@@ -28,7 +28,8 @@ const ValorFuturoIC = () => {
         resultado <= 0
           ? 'El resultado es menor o igual a cero. Asegúrate de diligenciar correctamente los campos'
           : 'El valor futuro, utilizando interés compuesto, es de ' +
-              resultado.toFixed(2)
+              '$' +
+              new Intl.NumberFormat().format(resultado)
       );
       setSuccessNotification(true);
     } else {

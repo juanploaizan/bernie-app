@@ -13,6 +13,7 @@ import TasaInteresIC from './pages/InteresCompuesto/TasaInteresIC';
 import PeriodoIC from './pages/InteresCompuesto/PeriodoIC';
 import ConversionTasas from './pages/ConversionTasas/ConversionTasas';
 import MetodoFrances from './pages/Amortizacion/MetodoFrances';
+import MetodoAleman from './pages/Amortizacion/MetodoAleman';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -63,6 +64,7 @@ function App() {
           path="/Amortizaciones/MetodoFrances"
           element={<MetodoFrances />}
         />
+        <Route path="/Amortizaciones/MetodoAleman" element={<MetodoAleman />} />
 
         <Route path="/ConversionTasas" element={<ConversionTasas />} />
       </Routes>

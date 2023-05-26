@@ -24,7 +24,8 @@ const ValorPresente = () => {
         resultado <= 0
           ? 'El resultado es menor o igual a cero. Asegúrate de diligenciar correctamente los campos'
           : 'El valor presente, utilizando interés simple, es de ' +
-              resultado.toFixed(2)
+              '$' +
+              new Intl.NumberFormat().format(resultado)
       );
       setSuccessNotification(true);
     } else {

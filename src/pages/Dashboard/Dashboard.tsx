@@ -156,7 +156,7 @@ const Dashboard = () => {
           <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
               <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
-                Ten presente al usar Bernie
+                Ten presente al usar Bernie.
               </h2>
 
               <ul className="font-medium text-black dark:text-white">
@@ -170,11 +170,16 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <h4>
-                    - La tasa de interés y el periodo deben estar en la mismo
-                    periodo de tiempo (mes, trimestre, año, etc.). En caso de
-                    que el periodo y la tasa de interés se encuentren en
-                    periodos de tiempo distintos. Usa nuestra herramienta de
-                    conversión de tasas antes de realizar tus cálculos.
+                    - La tasa de interés y el periodo de vida deben estar en la
+                    misma magnitud de tiempo (mes, trimestre, año, etc.).
+                  </h4>
+                </li>
+                <li>
+                  <h4>
+                    - En caso de que el periodo y la tasa de interés se
+                    encuentren en periodos de tiempo distintos, usa nuestra
+                    herramienta de conversión de tasas antes de realizar tus
+                    cálculos.
                   </h4>
                 </li>
               </ul>

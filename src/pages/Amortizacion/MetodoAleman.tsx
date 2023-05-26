@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useRef } from 'react';
+
 import Breadcrumb from '../../components/Breadcrumb';
 import DefaultLayout from '../../layout/DefaultLayout';
 import TablaAmortizacion from '../../components/TablaAmortizacion';
@@ -11,7 +12,7 @@ interface TablaAmortizacionItem {
   saldo: number;
 }
 
-const MetodoFrances = () => {
+const MetodoAleman = () => {
   const [warningNotification, setWarningNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
   const [showTable, setShowTable] = useState(false);
@@ -39,19 +40,17 @@ const MetodoFrances = () => {
         saldo: montoCredito,
       });
 
-      let cuota =
-        (montoCredito * tasaInteres) /
-        (1 - Math.pow(1 + tasaInteres, -periodo));
-      console.log('cuota: ' + cuota);
+      let capital = montoCredito / periodo;
 
       let saldo = montoCredito;
+      let cuota = 0;
       let interes = 0;
-      let capital = 0;
       let interesTotalAux = 0;
+
       for (let periodoAux = 1; periodoAux <= periodo; periodoAux++) {
         interes = saldo * tasaInteres;
-        capital = cuota - interes;
         saldo = saldo - capital;
+        cuota = capital + interes;
         nuevaTablaAmortizacion.push({
           periodo: periodoAux,
           cuota: cuota,
@@ -69,6 +68,7 @@ const MetodoFrances = () => {
       setNotificationMessage(
         'Diligencia todos los campos correctamente. El valor de todos los campos debe ser positivo.'
       );
+      setShowTable(false);
       setWarningNotification(true);
     }
   };
@@ -107,7 +107,7 @@ const MetodoFrances = () => {
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
           <h3 className="font-medium text-black dark:text-white">
-            Método francés
+            Método alemán
           </h3>
         </div>
         <form onSubmit={handleSubmit}>
@@ -170,4 +170,4 @@ const MetodoFrances = () => {
   );
 };
 
-export default MetodoFrances;
+export default MetodoAleman;
