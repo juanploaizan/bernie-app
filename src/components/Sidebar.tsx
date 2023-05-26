@@ -616,8 +616,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* ------------------------------- BEGIN amortizaciones ------------------------------- */}
               <SidebarLinkGroup
                 activeCondition={
-                  pathname === '/amortizaciones' ||
-                  pathname.includes('amortizaciones')
+                  pathname === '/Amortizaciones' ||
+                  pathname.includes('Amortizaciones')
                 }
               >
                 {(handleClick, open) => {
@@ -626,8 +626,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       <NavLink
                         to="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === '/amortizaciones' ||
-                            pathname.includes('amortizaciones')) &&
+                          (pathname === '/Amortizaciones' ||
+                            pathname.includes('Amortizaciones')) &&
                           'bg-graydark dark:bg-meta-4'
                         }`}
                         onClick={(e) => {
@@ -690,7 +690,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         <ul className="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
-                              to="/"
+                              to="/Amortizaciones/MetodoAleman"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
@@ -701,7 +701,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                           <li>
                             <NavLink
-                              to="/"
+                              to="/Amortizaciones/MetodoFrances"
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
@@ -732,7 +732,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <NavLink
                   to="/ConversionTasas"
                   className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('conversion-tasas') &&
+                    pathname.includes('ConversionTasas') &&
                     'bg-graydark dark:bg-meta-4'
                   }`}
                 >

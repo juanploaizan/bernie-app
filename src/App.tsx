@@ -12,6 +12,7 @@ import ValorPresenteIC from './pages/InteresCompuesto/ValorPresenteIC';
 import TasaInteresIC from './pages/InteresCompuesto/TasaInteresIC';
 import PeriodoIC from './pages/InteresCompuesto/PeriodoIC';
 import ConversionTasas from './pages/ConversionTasas/ConversionTasas';
+import MetodoFrances from './pages/Amortizacion/MetodoFrances';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -57,6 +58,11 @@ function App() {
           element={<TasaInteresIC />}
         />
         <Route path="/InteresCompuesto/Periodo" element={<PeriodoIC />} />
+
+        <Route
+          path="/Amortizaciones/MetodoFrances"
+          element={<MetodoFrances />}
+        />
 
         <Route path="/ConversionTasas" element={<ConversionTasas />} />
       </Routes>

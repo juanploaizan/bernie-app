@@ -24,7 +24,8 @@ const TasaInteres = () => {
         resultado <= 0
           ? 'El resultado es menor o igual a cero. Asegúrate de diligenciar correctamente los campos'
           : 'La tasa de interés, utilizando interés simple, es de ' +
-              resultado.toFixed(2)
+              (resultado * 100).toFixed(3) +
+              '%'
       );
       setSuccessNotification(true);
     } else {
