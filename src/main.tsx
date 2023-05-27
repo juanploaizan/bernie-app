@@ -7,7 +7,7 @@ import './satoshi.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Router>
+    <Router basename='/bernie_app'>
       <App />
     </Router>
   </React.StrictMode>,
