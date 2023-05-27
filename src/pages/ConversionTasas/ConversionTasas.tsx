@@ -54,7 +54,7 @@ const ConversionTasas = () => {
 
         //Desde periódico
         case 2:
-          //Hacia efectivo
+          //Hacia efectivo anual
           if (nuevoTipoTasa === 3) {
             if (esVencido) {
               resultado =
@@ -66,27 +66,27 @@ const ConversionTasas = () => {
             break;
           }
 
-          //Hacia periódico
+          //Cambio de periodo
+          if (periodo != nuevoPeriodo) {
+            console.log('Cambio de periodo.');
+            resultado =
+              Math.pow(
+                1 + resultado,
+                mapPeriodos.get(periodo) / mapPeriodos.get(nuevoPeriodo)
+              ) - 1;
+          } else {
+            resultado = tasaActual + 0;
+          }
+
+          //Cambio de vencido o anticipado
           if (esVencido && !nuevoEsVencido) {
             resultado = tasaActual / (1 + tasaActual);
           }
           if (!esVencido && nuevoEsVencido) {
             resultado = tasaActual / (1 - tasaActual);
           }
-          if (esVencido === nuevoEsVencido) {
-            resultado = tasaActual;
-          }
 
-          //Cambio de periodo
-          if (periodo != nuevoPeriodo) {
-            resultado =
-              Math.pow(
-                1 + resultado,
-                mapPeriodos.get(periodo) / mapPeriodos.get(nuevoPeriodo)
-              ) - 1;
-          }
-
-          // Si nuevo es nominal
+          // Periódico a nominal
           if (nuevoTipoTasa === 2) {
             resultado = resultado * mapPeriodos.get(nuevoPeriodo);
           }
@@ -94,29 +94,17 @@ const ConversionTasas = () => {
 
         //Desde nominal
         case 3:
-          let tasaPeriodica = tasaActual / mapPeriodos.get(periodo);
+          resultado = tasaActual / mapPeriodos.get(periodo);
 
           //Hacia efectivo
           if (nuevoTipoTasa === 3) {
             if (esVencido) {
-              resultado =
-                Math.pow(1 + tasaPeriodica, mapPeriodos.get(periodo)) - 1;
+              resultado = Math.pow(1 + resultado, mapPeriodos.get(periodo)) - 1;
             } else {
               resultado =
-                Math.pow(1 - tasaPeriodica, -mapPeriodos.get(periodo)) - 1;
+                Math.pow(1 - resultado, -mapPeriodos.get(periodo)) - 1;
             }
             break;
-          }
-
-          //Hacia periódico
-          if (esVencido && !nuevoEsVencido) {
-            resultado = tasaPeriodica / (1 + tasaPeriodica);
-          }
-          if (!esVencido && nuevoEsVencido) {
-            resultado = tasaPeriodica / (1 - tasaPeriodica);
-          }
-          if (esVencido === nuevoEsVencido) {
-            resultado = tasaPeriodica;
           }
 
           //Cambio de periodo
@@ -126,6 +114,14 @@ const ConversionTasas = () => {
                 1 + resultado,
                 mapPeriodos.get(periodo) / mapPeriodos.get(nuevoPeriodo)
               ) - 1;
+          }
+
+          //Cambio de vencido o anticipado
+          if (esVencido && !nuevoEsVencido) {
+            resultado = resultado / (1 + resultado);
+          }
+          if (!esVencido && nuevoEsVencido) {
+            resultado = resultado / (1 - resultado);
           }
 
           // Si nuevo es nominal

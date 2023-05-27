@@ -14,6 +14,10 @@ import PeriodoIC from './pages/InteresCompuesto/PeriodoIC';
 import ConversionTasas from './pages/ConversionTasas/ConversionTasas';
 import MetodoFrances from './pages/Amortizacion/MetodoFrances';
 import MetodoAleman from './pages/Amortizacion/MetodoAleman';
+import ValorFuturoAN from './pages/Anualidades/ValorFuturoAN';
+import PageNotFound from './pages/404/PageNotFound';
+import ValorPresenteAN from './pages/Anualidades/ValorPresenteAN';
+import RazonPago from './pages/Anualidades/RazonPago';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -38,35 +42,45 @@ function App() {
       <Routes>
         <Route path="/" element={<PreviewPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/InteresSimple/ValorFuturo" element={<ValorFuturo />} />
+        <Route path="/interes-simple/valor-futuro" element={<ValorFuturo />} />
         <Route
-          path="/InteresSimple/ValorPresente"
+          path="/interes-simple/valor-presente"
           element={<ValorPresente />}
         />
-        <Route path="/InteresSimple/TasaInteres" element={<TasaInteres />} />
-        <Route path="/InteresSimple/Periodo" element={<Periodo />} />
+        <Route path="/interes-simple/tasa-interes" element={<TasaInteres />} />
+        <Route path="/interes-simple/periodo" element={<Periodo />} />
 
         <Route
-          path="/InteresCompuesto/ValorFuturo"
+          path="/interes-compuesto/valor-futuro"
           element={<ValorFuturoIC />}
         />
         <Route
-          path="/InteresCompuesto/ValorPresente"
+          path="/interes-compuesto/valor-presente"
           element={<ValorPresenteIC />}
         />
         <Route
-          path="/InteresCompuesto/TasaInteres"
+          path="/interes-compuesto/tasa-interes"
           element={<TasaInteresIC />}
         />
-        <Route path="/InteresCompuesto/Periodo" element={<PeriodoIC />} />
+        <Route path="/interes-compuesto/periodo" element={<PeriodoIC />} />
 
         <Route
-          path="/Amortizaciones/MetodoFrances"
+          path="/amortizaciones/metodo-frances"
           element={<MetodoFrances />}
         />
-        <Route path="/Amortizaciones/MetodoAleman" element={<MetodoAleman />} />
+        <Route
+          path="/amortizaciones/metodo-aleman"
+          element={<MetodoAleman />}
+        />
 
-        <Route path="/ConversionTasas" element={<ConversionTasas />} />
+        <Route path="/conversion-tasas" element={<ConversionTasas />} />
+        <Route path="/anualidades/valor-futuro" element={<ValorFuturoAN />} />
+        <Route
+          path="/anualidades/valor-presente"
+          element={<ValorPresenteAN />}
+        />
+        <Route path="/anualidades/razon-pago" element={<RazonPago />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
   );

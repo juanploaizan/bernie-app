@@ -165,7 +165,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <h4>
-                    - Todos los resultados serán aproximados a dos decimales.
+                    - Todos los resultados serán aproximados a tres decimales.
                   </h4>
                 </li>
                 <li>
