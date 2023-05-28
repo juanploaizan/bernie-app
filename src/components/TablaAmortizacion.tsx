@@ -60,35 +60,23 @@ const TablaAmortizacion: React.FC<Props> = ({
                 </td>
                 <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                   <p className="text-black dark:text-white">
-                    {'$' +
-                      new Intl.NumberFormat('en-US', {
-                        maximumSignificantDigits: 2,
-                      }).format(registro.cuota)}
+                    {'$' + new Intl.NumberFormat().format(registro.cuota)}
                   </p>
                 </td>
                 <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                   <p className="text-black dark:text-white">
-                    {'$' +
-                      new Intl.NumberFormat('en-US', {
-                        maximumSignificantDigits: 2,
-                      }).format(registro.capital)}
+                    {'$' + new Intl.NumberFormat().format(registro.capital)}
                   </p>
                 </td>
                 <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                   <p className="text-black dark:text-white">
-                    {'$' +
-                      new Intl.NumberFormat('en-US', {
-                        maximumSignificantDigits: 2,
-                      }).format(registro.interes)}
+                    {'$' + new Intl.NumberFormat().format(registro.interes)}
                   </p>
                 </td>
                 <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                   <p className="text-black dark:text-white">
                     {registro.periodo !== periodo
-                      ? '$' +
-                        new Intl.NumberFormat('en-US', {
-                          maximumSignificantDigits: 2,
-                        }).format(registro.saldo)
+                      ? '$' + new Intl.NumberFormat().format(registro.saldo)
                       : '$0.0'}
                   </p>
                 </td>
@@ -98,10 +86,7 @@ const TablaAmortizacion: React.FC<Props> = ({
         </table>
         <p className="p-3.5 text-center font-medium text-black dark:text-white">
           Interés total pagado:{' '}
-          {'$' +
-            new Intl.NumberFormat('en-US', {
-              maximumSignificantDigits: 2,
-            }).format(interesTotal)}
+          {'$' + new Intl.NumberFormat().format(interesTotal)}
         </p>
       </div>
       <div className="m-3 flex items-center justify-center">
