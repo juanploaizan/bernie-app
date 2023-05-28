@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import Logo from '../images/logo/logo-label.png';
 import SidebarLinkGroup from './SidebarLinkGroup';
 
@@ -64,9 +64,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-        <a href="/dashboard">
+        <Link to="/dashboard">
           <img width="200px" src={Logo} alt="Logo" />
-        </a>
+        </Link>
 
         <button
           ref={trigger}

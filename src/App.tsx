@@ -18,6 +18,9 @@ import ValorFuturoAN from './pages/Anualidades/ValorFuturoAN';
 import PageNotFound from './pages/404/PageNotFound';
 import ValorPresenteAN from './pages/Anualidades/ValorPresenteAN';
 import RazonPago from './pages/Anualidades/RazonPago';
+import PeriodoAN from './pages/Anualidades/PeriodoAN';
+import ValorFuturoGR from './pages/Gradientes/ValorFuturoGR';
+import ValorPresenteGR from './pages/Gradientes/ValorPresenteGR';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -49,7 +52,6 @@ function App() {
         />
         <Route path="/interes-simple/tasa-interes" element={<TasaInteres />} />
         <Route path="/interes-simple/periodo" element={<Periodo />} />
-
         <Route
           path="/interes-compuesto/valor-futuro"
           element={<ValorFuturoIC />}
@@ -63,7 +65,6 @@ function App() {
           element={<TasaInteresIC />}
         />
         <Route path="/interes-compuesto/periodo" element={<PeriodoIC />} />
-
         <Route
           path="/amortizaciones/metodo-frances"
           element={<MetodoFrances />}
@@ -72,7 +73,6 @@ function App() {
           path="/amortizaciones/metodo-aleman"
           element={<MetodoAleman />}
         />
-
         <Route path="/conversion-tasas" element={<ConversionTasas />} />
         <Route path="/anualidades/valor-futuro" element={<ValorFuturoAN />} />
         <Route
@@ -80,6 +80,12 @@ function App() {
           element={<ValorPresenteAN />}
         />
         <Route path="/anualidades/razon-pago" element={<RazonPago />} />
+        <Route path="/anualidades/periodo" element={<PeriodoAN />} />
+        <Route path="/gradientes/valor-futuro" element={<ValorFuturoGR />} />
+        <Route
+          path="/gradientes/valor-presente"
+          element={<ValorPresenteGR />}
+        />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
